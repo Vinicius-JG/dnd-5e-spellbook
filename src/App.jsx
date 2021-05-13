@@ -1,8 +1,12 @@
 import './App.css';
+import Menu from './Components/Menu'
+import Content from './Components/Content'
 
-function App() {
+const App = () => {
   return (
     <div className="App">
+      <Menu />
+      <Content />
     </div>
   );
 }

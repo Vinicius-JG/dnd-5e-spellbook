@@ -1,0 +1,18 @@
+.menu {
+  display: flex;
+  background-color: #960000;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: grey 0px 5px 5px;
+}
+
+a {
+  margin: 80px;
+  text-decoration: none;
+  color: #ffffffaa;
+}
+
+a:hover {
+  color: #ffffff;
+}
