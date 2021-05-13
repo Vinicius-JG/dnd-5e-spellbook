@@ -1,0 +1,40 @@
+.spellList {
+  flex-grow: 1;
+}
+
+.spellList th,
+.spellList td {
+  padding: 5px 20px;
+  font-size: 0.75rem;
+}
+
+.spellList th {
+  background-color: #a82315;
+  color: #ffffff;
+}
+
+.spellList .even {
+  background-color: #ececec;
+}
+
+.spellList .uneven {
+  background-color: #ffffff;
+}
+
+.spellList .no-border {
+  border-bottom: none;
+}
+
+.spellList .centered {
+  text-align: center;
+}
+
+.spellList table {
+  border-collapse: collapse;
+  margin-bottom: 80px;
+}
+
+.spellList a {
+  text-decoration: none;
+  color: #ffffff;
+}

@@ -1,0 +1,16 @@
+.search {
+  display: flex;
+  padding: 40px;
+  text-align: center;
+  align-items: center;
+}
+
+.search input {
+  font-family: "Goblin One", cursive;
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: grey 0 0px 5px;
+  outline: none;
+  height: 20px;
+}

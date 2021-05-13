@@ -4,7 +4,7 @@ import Content from './Components/Content'
 
 const App = () => {
   return (
-    <div className="App">
+    <div className="app">
       <Menu />
       <Content />
     </div>

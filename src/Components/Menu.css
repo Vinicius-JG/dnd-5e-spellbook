@@ -1,18 +1,18 @@
 .menu {
   display: flex;
-  background-color: #960000;
-  height: 100px;
+  background-color: #a82315;
   align-items: center;
   justify-content: center;
   box-shadow: grey 0px 5px 5px;
+  height: 80px;
 }
 
-a {
+.menu a {
   margin: 80px;
   text-decoration: none;
   color: #ffffffaa;
 }
 
-a:hover {
+.menu a:hover {
   color: #ffffff;
 }

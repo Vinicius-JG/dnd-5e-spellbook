@@ -1,9 +1,13 @@
 import './Content.css'
+import Search from './Search'
+import SpellList from './SpellList'
+
 
 const Content = () => {
     return(
         <div className='content'>
-            CONTENT
+            <Search />
+            <SpellList />
         </div>
     )
 }
