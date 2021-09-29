@@ -15,4 +15,9 @@
 
 .menu a:hover {
   color: #ffffff;
+  transform: scale(1.1, 1.1);
+}
+
+.menu a:active {
+  transform: scale(0.95, 0.95);
 }

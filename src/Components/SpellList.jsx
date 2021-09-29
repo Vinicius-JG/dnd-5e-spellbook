@@ -2,16 +2,27 @@ import './SpellList.css'
 import Spell from './Spell'
 import axios from 'axios'
 import {useState, useEffect} from 'react'
+import Pagination from './Pagination'
 
 const SpellList = () => {
-    let [spells, setSpells] = useState([])
-    let [ordering, setOrdering] = useState('name')
-
-    let url = `https://api.open5e.com/spells/?ordering=${ordering}&limit=20`
+    const [spells, setSpells] = useState([])
+    const [ordering, setOrdering] = useState('name')
+    const [url, setUrl] = useState(`https://api.open5e.com/spells/?ordering=${ordering}&limit=20`)
+    const [nextUrl, setNextUrl] = useState('')
+    const [previousUrl, setPreviousUrl] = useState('')
+    const [btnNextDisabled, setBtnNextDisabled] = useState(false)
+    const [btnPreviousDisabled, setBtnPreviousDisabled] = useState(false)
 
     useEffect(() => {
-        axios.get(url).then(resp => setSpells(resp.data.results)).catch(err => console.log(err))
-    }, [ordering])
+        if(url == null)
+            return
+
+        axios.get(url).then(resp => {
+            setSpells(resp.data.results)
+            setNextUrl(resp.data.next)
+            setPreviousUrl(resp.data.previous)
+        }).catch(err => console.log(err))
+    }, [url])
 
     const orderByName = e => {
         e.preventDefault()
@@ -38,6 +49,18 @@ const SpellList = () => {
         setOrdering('school')
     }
 
+    const handleNext = () => {
+        setUrl(nextUrl)
+
+        setBtnNextDisabled(nextUrl == null)
+    }
+
+    const handlePrevious = () => {
+        setUrl(previousUrl)
+
+        setBtnPreviousDisabled(previousUrl == null)
+    }
+
 
     return(
         <div className="spellList">
@@ -56,6 +79,7 @@ const SpellList = () => {
                 {spells.map((spell, i) => <Spell key={i} index={i} name={spell.name} level={spell.level_int} dnd_class={spell.dnd_class} components={spell.components} school={spell.school}/>)}
                 </tbody>
             </table>
+            <Pagination next={handleNext} previous={handlePrevious} nextDisabled={btnNextDisabled} previousDisable={btnPreviousDisabled}/>
         </div>
     )
 }

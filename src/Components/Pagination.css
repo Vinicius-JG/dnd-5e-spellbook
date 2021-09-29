@@ -1,0 +1,23 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+
+.pagination button {
+  all: unset;
+  font-size: 50px;
+  margin: 0px 150px;
+  color: #000000aa;
+  font-family: "Goblin One", cursive;
+  text-transform: uppercase;
+}
+
+.pagination button:hover {
+  color: #000000;
+  transform: scale(1.1, 1.1);
+}
+
+.pagination button:active {
+  transform: scale(0.9, 0.9);
+}
